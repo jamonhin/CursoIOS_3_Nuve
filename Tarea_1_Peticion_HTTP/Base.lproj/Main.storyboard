@@ -24,14 +24,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="978-84-376-0494-7" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0tK-8S-JTH">
-                                <rect key="frame" x="227" y="220" width="146" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="Dch-0i-sMf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L51-CG-VdM">
                                 <rect key="frame" x="180" y="220" width="37" height="30"/>
                                 <constraints>
@@ -68,13 +60,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DjO-6S-7pr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sin resultados" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DjO-6S-7pr">
                                 <rect key="frame" x="180" y="305" width="240" height="231"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="978-84-376-0494-7" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0tK-8S-JTH">
+                                <rect key="frame" x="225" y="220" width="158" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="Dch-0i-sMf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -82,7 +81,7 @@
                             <constraint firstItem="L51-CG-VdM" firstAttribute="baseline" secondItem="GGE-Su-y3f" secondAttribute="baseline" id="BJu-M6-Gfw"/>
                             <constraint firstItem="DjO-6S-7pr" firstAttribute="top" secondItem="058-K2-sMJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Ee3-dG-229"/>
                             <constraint firstItem="L51-CG-VdM" firstAttribute="top" secondItem="YBU-8N-gWT" secondAttribute="bottom" constant="35" id="PMJ-d2-YCM"/>
-                            <constraint firstItem="YBU-8N-gWT" firstAttribute="centerX" secondItem="0tK-8S-JTH" secondAttribute="centerX" id="Q95-7E-yds"/>
+                            <constraint firstItem="YBU-8N-gWT" firstAttribute="centerX" secondItem="0tK-8S-JTH" secondAttribute="centerX" constant="-4" id="Q95-7E-yds"/>
                             <constraint firstItem="0tK-8S-JTH" firstAttribute="top" secondItem="GGE-Su-y3f" secondAttribute="top" id="QgD-fd-Gny"/>
                             <constraint firstItem="68a-8i-Jcv" firstAttribute="centerX" secondItem="YBU-8N-gWT" secondAttribute="centerX" id="V6e-yA-RWt"/>
                             <constraint firstItem="L51-CG-VdM" firstAttribute="leading" secondItem="058-K2-sMJ" secondAttribute="leading" id="X7J-a5-YLp"/>
@@ -92,10 +91,10 @@
                             <constraint firstItem="68a-8i-Jcv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bht-fo-Sha"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DjO-6S-7pr" secondAttribute="bottom" constant="64" id="gV4-gr-qbn"/>
                             <constraint firstItem="YBU-8N-gWT" firstAttribute="leading" secondItem="L51-CG-VdM" secondAttribute="leading" id="jga-x4-1o3"/>
-                            <constraint firstItem="0tK-8S-JTH" firstAttribute="leading" secondItem="L51-CG-VdM" secondAttribute="trailing" constant="10" id="khn-zC-3gk"/>
+                            <constraint firstItem="0tK-8S-JTH" firstAttribute="leading" secondItem="L51-CG-VdM" secondAttribute="trailing" constant="8" id="khn-zC-3gk"/>
                             <constraint firstItem="GGE-Su-y3f" firstAttribute="trailing" secondItem="DjO-6S-7pr" secondAttribute="trailing" id="og7-Wc-K43"/>
-                            <constraint firstItem="iit-To-0Dv" firstAttribute="leading" secondItem="0tK-8S-JTH" secondAttribute="leading" id="rc1-NX-9lU"/>
-                            <constraint firstItem="GGE-Su-y3f" firstAttribute="leading" secondItem="0tK-8S-JTH" secondAttribute="trailing" constant="13" id="td3-zP-6bs"/>
+                            <constraint firstItem="iit-To-0Dv" firstAttribute="leading" secondItem="0tK-8S-JTH" secondAttribute="leading" constant="2" id="rc1-NX-9lU"/>
+                            <constraint firstItem="GGE-Su-y3f" firstAttribute="leading" secondItem="0tK-8S-JTH" secondAttribute="trailing" constant="3" id="td3-zP-6bs"/>
                             <constraint firstItem="058-K2-sMJ" firstAttribute="leading" secondItem="DjO-6S-7pr" secondAttribute="leading" id="x1W-fq-O0v"/>
                             <constraint firstItem="iit-To-0Dv" firstAttribute="top" secondItem="YBU-8N-gWT" secondAttribute="bottom" constant="14" id="y8P-0r-9zG"/>
                             <constraint firstItem="YBU-8N-gWT" firstAttribute="trailing" secondItem="GGE-Su-y3f" secondAttribute="trailing" id="yyt-hn-2bH"/>

@@ -60,27 +60,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func consultarLibro()  {
         
-        if  self.txtLibro.text != "" {
-        var libro : String?
-        
-        libro = String(self.txtLibro.text!)
-        
-        let urls: String = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + libro!
-        print(urls)
-        //self.txtResultado.text = "Esperando Respuesta..."
-        
-        let url = NSURL(string: urls)
-        let datos: NSData? = NSData(contentsOfURL: url!)
-        let respuesta = NSString(data: datos!, encoding: NSUTF8StringEncoding)
-        
-        print(respuesta)
-        
-        self.txtResultado.text = String(respuesta)
+        if  (self.txtLibro.text != "") {
+                
+                
+                var libro : String?
+                
+                 libro = String(self.txtLibro.text!)
+                
+                let urls: String = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + libro!
+                print(urls)
+                //self.txtResultado.text = "Esperando Respuesta..."
+                
+                let url = NSURL(string: urls)
+                let datos: NSData? = NSData(contentsOfURL: url!)
+                let respuesta = NSString(data: datos!, encoding: NSUTF8StringEncoding)
+                
+                print(respuesta)
+                
+                if String(respuesta) != "Optional({})" {
+                    self.txtResultado.text = String(respuesta)
+                } else {
+                    self.txtResultado.text = "No se encontraron resultados para esta busqueda.."
+                }
+               
             
         } else {
         
             let alertController = UIAlertController(title: "Mensaje Alerta", message:
-                "Debe ingresar un numero ISBN Valido", preferredStyle: UIAlertControllerStyle.Alert)
+                "Debe ingresar un numero ISBN antes de dar clic en la lupa", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Cerrar", style: UIAlertActionStyle.Default,handler: nil))
             
             self.presentViewController(alertController, animated: true, completion: nil)
