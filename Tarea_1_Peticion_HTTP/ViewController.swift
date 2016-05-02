@@ -68,20 +68,56 @@ class ViewController: UIViewController, UITextFieldDelegate {
                  libro = String(self.txtLibro.text!)
                 
                 let urls: String = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + libro!
-                print(urls)
+                //print(urls)
                 //self.txtResultado.text = "Esperando Respuesta..."
                 
                 let url = NSURL(string: urls)
                 let datos: NSData? = NSData(contentsOfURL: url!)
                 let respuesta = NSString(data: datos!, encoding: NSUTF8StringEncoding)
                 
-                print(respuesta)
+                //manejo de errores
+            do {
                 
-                if String(respuesta) != "Optional({})" {
-                    self.txtResultado.text = String(respuesta)
+                if  String(respuesta) !=   "Optional({})" {
+                    
+                    let json =  try NSJSONSerialization.JSONObjectWithData(datos!, options: NSJSONReadingOptions.MutableLeaves)
+                    let dic1 = json as! NSDictionary
+                    let dic2 = dic1["ISBN:" + libro!] as! NSDictionary
+                    
+                    var autores: String = ""
+                    
+                    var names = [String]()
+                    
+                    // Debemos validar si existe la clave authors o cualquier otro nodo del json ya que si no existe nos saldra un error
+                    
+                    if let _ = dic2["authors"] {
+                        //Si existe como nos devuelve un arreglo ya que inicia con [] lo debmos leer asi con un ciclo
+                        let dic3 = dic2["authors"] as? [[String: AnyObject]]
+                        for dic3 in dic3! {
+                            if let name = dic3["name"] as? String {
+                                names.append(name)
+                            }
+                        }
+                        for element in names {
+                            autores = element + ", " + autores
+                        }
+                      
+                    }
+                    else {
+                        autores = "No se encontraron autores"
+                    }
+                    
+ 
+                    self.txtResultado.text =  "Titulo del libro: " + String(dic2["title"]!) + ", Autores del Libro: " + autores + " y portada: Sin informacion "
+                    
                 } else {
                     self.txtResultado.text = "No se encontraron resultados para esta busqueda.."
                 }
+                
+            }
+            catch _ {
+                self.txtResultado.text = "Error en la conexion a Internet, Verifique su conexion y vuelva a intentar la tarea"
+            }
                
             
         } else {
